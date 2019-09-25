@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>T20 Match</title>
+</head>
+<body>
+<h1>Board of Control for Cricket in India</h1>
+<h3>T20 Cricket Match Statistics</h3>
+<canvas id="myCanvas" width="500" height="400" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "15px Arial";
+ctx.lineWidth = 1.5;
+ctx.strokeText("Runs ^",40,20);
+ctx.strokeText("240-",0,20);
+ctx.strokeText("210-",0,70);
+ctx.strokeText("180-",0,120);
+ctx.strokeText("150-",0,170);
+ctx.strokeText("120-",0,220);
+ctx.strokeText("60  -",0,270);
+ctx.strokeText("30  -",0,320);
+ctx.strokeText("0    -",0,370);
+ctx.moveTo(30,400);
+ctx.lineTo(30,0);
+ctx.moveTo(0,370);
+ctx.lineTo(500,370);
+ctx.stroke();
+ctx.strokeText("|",130,380);
+ctx.strokeText("5",130,395);
+ctx.strokeText("|",230,380);
+ctx.strokeText("10",230,395);
+ctx.strokeText("|",330,380);
+ctx.strokeText("15",330,395);
+ctx.strokeText("|",430,380);
+ctx.strokeText("20",430,395);
+ctx.strokeText("Overs ->",435,370);
+ctx.moveTo(130, 303); //(5,40)
+ctx.lineTo(230, 245); //(10,75)
+ctx.moveTo(230, 245);
+ctx.lineTo(330, 187); //(15,140)
+ctx.moveTo(330, 187);
+ctx.lineTo(430, 70);
+ctx.stroke();
+</script>
+</body>
+</html>
+
+
+
+<https://teams.microsoft.com/l/message/19:f84ef8b46e1e4f4a8e8316b191916fe4@thread.skype/1569315223817?tenantId=258ac4e4-146a-411e-9dc8-79a9e12fd6da&amp;groupId=e4e38f87-dba8-42db-8916-1e4de3c9cc03&amp;parentMessageId=1569315223817&amp;teamName=Digital domain BOP&amp;channelName=General&amp;createdTime=1569315223817>
