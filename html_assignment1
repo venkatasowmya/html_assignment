@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="ass1.css">
+<title>User's Current Position</title>
+<body>
+ <svg height="100" width="100">
+  <circle id="circle1" cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="yellow"/>
+  Sorry, your browser does not support inline SVG.  
+</svg>
+<svg height="100" width="100">
+  <circle id="circle2" cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="yellow"/>
+  Sorry, your browser does not support inline SVG.  
+</svg> 
+            <section id="sec1" class="sec1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            </section>
+    <section id="sec2" class="sec2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    </section>
+       <br/>
+       <section>
+               <p> <strong>Drag the gif image to any of the SVG circles above.</strong>
+       </p>
+       <img id="drg1" alt="Check Internet Connection!"src="https://media.giphy.com/media/l3vR16pONsV8cKkWk/giphy.gif" draggable="true" ondragstart="drag(event)" width="100" height="100"/>
+</section>
+<script>
+            function allowDrop(ev) {
+                ev.preventDefault();
+            }
+
+
+            function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
+
+
+            function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+            }
+    function showPosition() {
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
+        localStorage.setItem("Latitude",position.coords.latitude);
+        localStorage.setItem("Longitude",position.coords.longitude);
+        document.getElementById("result").innerHTML = localStorage.getItem("Latitude");
+        document.getElementById("result").innerHTML = localStorage.getItem("Longitude");
+                document.getElementById("result").innerHTML = positionInfo;
+            });
+        } else {
+            alert("Sorry, your browser does not support HTML5 geolocation.");
+        }
+    }
+</script>
+</head>
+    <div id="result"></div><br/>
+    <button type="button" onclick="showPosition();">Show Position</button>
+</body>
+</html>
+
+
+
+
